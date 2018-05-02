@@ -1,0 +1,955 @@
+
+/*>>>>>>>>>>>> 0. scrollbar <<<<<<<<<<<<<<<<< */
+#more_information::-webkit-scrollbar,.chat-scroller::-webkit-scrollbar ,#main_bg::-webkit-scrollbar,.chat-scroller::-webkit-scrollbar{
+    width: 5px;
+}
+
+/* Track */
+#more_information::-webkit-scrollbar,.chat-scroller::-webkit-scrollbar,#main_bg::-webkit-scrollbar,.chat-scroller::-webkit-scrollbar
+{
+    width: 5px;  /* for vertical scrollbars */
+    height: 5px; /* for horizontal scrollbars */
+}
+
+#more_information::-webkit-scrollbar-track,.chat-scroller::-webkit-scrollbar-track,#main_bg::-webkit-scrollbar,.chat-scroller::-webkit-scrollbar
+{
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#more_information::-webkit-scrollbar-thumb,.chat-scroller::-webkit-scrollbar-thumb,#main_bg::-webkit-scrollbar,.chat-scroller::-webkit-scrollbar
+{
+    background: rgba(0, 0, 0, 0.5);
+}
+/*>>>>>>>>>>>> /0. scrollbar <<<<<<<<<<<<<<<<< */
+
+
+/*>>>>>>>>>>>> 2. Background <<<<<<<<<<<<<<<<< */
+#main_bg
+{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),rgba(0,0,0,0.6) url('../images/lomba-diknas.jpg') no-repeat center;
+    background-size: cover;
+    /*background-image: url("sunrise.jpg");*/
+    position: relative;
+    /*background-size: cover;*/
+    height:100%;
+    width:100%;
+}
+.overlay_bg
+{
+    /*background:rgba(0, 0, 0, 0.7);*/
+    padding-top:60px;
+    height:100%; 
+    width:100%;
+    padding-bottom:44px;
+    /*overflow: hidden;*/
+}
+.overlay_bg1
+{
+    /*background:rgba(0, 0, 0, 0.7);*/
+    padding-top:60px;
+    height:100%;
+    width:100%;
+    padding-bottom:34px;
+}
+
+/*>>>>>>>>>>>> /2. Background <<<<<<<<<<<<<<<<< */
+
+/*>>>>>>>>>>>> 3. More Information Menu <<<<<<<<<<<<<<<<< */
+/* For three line and hover effect */
+.more_info {
+    /* hamburger icon */
+    position:absolute;
+    z-index: 3;
+    top: 12px;
+    right: 12%;
+    height: 44px;
+    cursor: pointer;
+    width: 44px;
+    /* image replacement */
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;
+    transition: transform 0.2s;
+}
+.more_info span {
+    /* icon created in CSS */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 32px;
+    height: 3px;
+    background-color:#fff;
+}
+.more_info span::before, .more_info span:after {
+    /* upper and lower lines of the menu icon */
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.2s, width 0.2s;
+    -moz-transition: -moz-transform 0.2s, width 0.2s;
+    transition: transform 0.2s, width 0.2s;
+}
+.more_info span::before {
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -ms-transform-origin: right top;
+    -o-transform-origin: right top;
+    transform-origin: right top;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+.more_info span::after {
+    -webkit-transform-origin: right bottom;
+    -moz-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    -o-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+    transform: translateY(10px);
+}
+.no-touch .more_info:hover {
+    /* rotate trigger on hover */
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.no-touch .more_info:hover span::after,
+.no-touch .more_info:hover span::before {
+    /* animate arrow --> from hamburger to arrow */
+    width: 50%;
+}
+.no-touch .more_info:hover span::before {
+    -webkit-transform: translateX(1px) translateY(1px) rotate(45deg);
+    -moz-transform: translateX(1px) translateY(1px) rotate(45deg);
+    -ms-transform: translateX(1px) translateY(1px) rotate(45deg);
+    -o-transform: translateX(1px) translateY(1px) rotate(45deg);
+    transform: translateX(1px) translateY(1px) rotate(45deg);
+}
+.no-touch .more_info:hover span::after {
+    -webkit-transform: translateX(1px) translateY(-1px) rotate(-45deg);
+    -moz-transform: translateX(1px) translateY(-1px) rotate(-45deg);
+    -ms-transform: translateX(1px) translateY(-1px) rotate(-45deg);
+    -o-transform: translateX(1px) translateY(-1px) rotate(-45deg);
+    transform: translateX(1px) translateY(-1px) rotate(-45deg);
+}
+/* For three line and hover effect */
+/*>>>>>>>>>>>> /3. More Information Menu <<<<<<<<<<<<<<<<< */
+
+/*>>>>>>>>>>>> 4. More Information Container <<<<<<<<<<<<<<<<< */
+/* Css For Modal container */
+.more_info_container {
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #fff;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.4s 0s, box-shadow 0s 0.4s;
+    -moz-transition: -moz-transform 0.4s 0s, box-shadow 0s 0.4s;
+    transition: transform 0.4s 0s, box-shadow 0s 0.4s;
+    padding:0;
+}
+.more_info_container.is-visible {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-overflow-scrolling: touch;
+    box-shadow: -4px 0 30px rgba(0, 0, 0, 0.2);
+    -webkit-transition: -webkit-transform 0.4s 0s, box-shadow 0s 0s;
+    -moz-transition: -moz-transform 0.4s 0s, box-shadow 0s 0s;
+    transition: transform 0.4s 0s, box-shadow 0s 0s;
+}
+/* /css For Modal container */
+
+/* css For Modal Container Header */
+.more_info_container header {
+    padding: 1.5em 0 30px 6.25%;
+    height: 68px;
+    position: relative;
+}
+.more_info_container h3 {
+    font-size:30px;
+    font-weight: bold;
+    color:#202020;
+    margin-top:0px;
+}
+/* /css For Modal Container Header */
+
+/* css For Container close Button */
+.close_more_info {
+    /* 'X' close icon */
+    position: absolute;
+    height: 44px;
+    width: 44px;
+    /* set the right position value so that it overlaps the .more_info*/
+    right: 0;
+    top: 50%;
+    bottom: auto;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    /* image replacement */
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+}
+.close_more_info::after, .close_more_info::before {
+    /* lines of 'X' icon */
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 32px;
+    left: 50%;
+    top: 50%;
+    background-color: #5c4b51;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.close_more_info::after {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+.close_more_info::before {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    -o-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+}
+.no-touch .close_more_info:hover {
+    opacity: .6;
+}
+/* /css For Container close Button */
+
+/* css for overlay visible when click on More info */
+.cd-overlay {
+    /* shadow layer visible when Modal is open */
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.35);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: opacity 0.4s 0s, visibility 0s 0.4s;
+    -moz-transition: opacity 0.4s 0s, visibility 0s 0.4s;
+    transition: opacity 0.4s 0s, visibility 0s 0.4s;
+    z-index:2;
+}
+.cd-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.4s 0s, visibility 0s 0s;
+    -moz-transition: opacity 0.4s 0s, visibility 0s 0s;
+    transition: opacity 0.4s 0s, visibility 0s 0s;
+}
+.main_details{
+    position: relative;
+    overflow-x: hidden;
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform 0.4s;
+    box-shadow: 0 0 30px #241d20;
+	
+}
+.main_details.scale-down {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+    height: 100vh !important;
+}
+/* css for overlay visible when click on More info */
+/*>>>>>>>>>>>> 4. More Information Container <<<<<<<<<<<<<<<<< */
+
+/*>>>>>>>>>>>> 5. About Us <<<<<<<<<<<<<<<<< */
+.number
+{
+    font-size: 150px;
+    font-weight: 900;
+    letter-spacing: -10px;
+}
+.name
+{
+    font-size: 35px;
+    font-weight: 700;
+}
+.about_detail, .service_detail, .contact_form
+{
+    margin-top:30px;
+    margin-bottom:30px;
+}
+.about_detail p
+{
+    font-size:15px;
+}
+/*>>>>>>>>>>>> /5. About Us <<<<<<<<<<<<<<<<< */
+
+/*>>>>>>>>>>>> 6. Services <<<<<<<<<<<<<<<<< */
+.services 
+{
+    text-align:right;
+}
+
+.services_cube_wrapper,.services_cube_wrapper div{
+    height:100%;
+    position:absolute
+}
+
+.services_cube_effect {
+    width:100%;
+    min-height:200px;
+    position:relative;
+    -webkit-perspective:1000px;
+    -moz-perspective:1000px;
+    -o-perspective:1000px;
+    perspective:1000px;
+    cursor:pointer;
+}
+.services_cube_wrapper {
+    width:100%;
+    -webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -o-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+    -webkit-transition:-webkit-transform 1s;
+    -moz-transition:-moz-transform 1s;
+    -o-transition:-o-transform 1s;
+    transition:transform 1s
+}
+.services_cube_wrapper div {
+    display:block;
+    width:100%;
+    color:#222;
+    text-align:center;
+    -webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -o-backface-visibility:hidden;
+    backface-visibility:hidden;
+}
+.services_cube_wrapper .services_icon {
+    -webkit-transform:translateZ(100px);
+    -moz-transform:translateZ(100px);
+    -o-transform:translateZ(100px);
+    transform:translateZ(100px);
+}
+.services_icon i
+{
+    font-size:50px;
+}
+.services_cube_wrapper .services_text {
+    -webkit-transform:rotateX(-90deg) translateZ(100px);
+    -moz-transform:rotateX(-90deg) translateZ(100px);
+    -o-transform:rotateX(-90deg) translateZ(100px);
+    transform:rotateX(-90deg) translateZ(100px)
+}
+.services_text i {
+    position:absolute;
+    top:50px;
+    width:80px;
+    left:50%;
+    margin-left:-40px;
+    margin-top:-30px;
+    color:#ccc;
+    font-size:80px;
+    z-index:-2;
+}
+.services_cube_wrapper.show_front {
+    -webkit-transform:translateZ(-100px);
+    -moz-transform:translateZ(-100px);
+    -o-transform:translateZ(-100px);
+    transform:translateZ(-100px);
+}
+.services_cube_wrapper.show-bottom {
+    -webkit-transform:translateZ(-100px) rotateX(90deg);
+    -moz-transform:translateZ(-100px) rotateX(90deg);
+    -o-transform:translateZ(-100px) rotateX(90deg);
+    transform:translateZ(-100px) rotateX(90deg)
+}
+/*>>>>>>>>>>>> /6. Services <<<<<<<<<<<<<<<<< */
+
+/*>>>>>>>>>>>> 7. Contact Us <<<<<<<<<<<<<<<<< */
+.contact_form .btn
+{
+    padding:10px 35px;
+    margin-top:20px;
+}
+.contact_form label
+{
+    font-size:15px;
+}
+.contact_detail
+{
+    margin-top:70px;
+    margin-bottom:30px;	
+}
+.contact_detail i
+{
+    font-size:40px;
+}
+.contact_detail h4
+{
+    margin-top:20px;
+    margin-bottom:15px;
+}
+.contact_detail p
+{
+    font-size:16px;
+    line-height:20px;
+}
+/*>>>>>>>>>>>> /7. Contact Us <<<<<<<<<<<<<<<<< */
+
+
+/*>>>>>>>>>>>> 8. Coming Text <<<<<<<<<<<<<<<<< */
+.coming_text h1
+{
+    font-size: 60px;
+    color:#FFFFFF;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.coming_text p
+{
+    width:50%;
+    margin:0 auto;
+    color:#FFFFFF;
+    font-size: 16px;
+}
+/*>>>>>>>>>>>> /8. Coming Text <<<<<<<<<<<<<<<<< */
+
+/*>>>>>>>>>>>> 9. Counter <<<<<<<<<<<<<<<<< */
+.counter {
+    margin-top: -10px;
+}
+.counter .day_holder, .counter .hour_holder, .counter .minute_holder, .counter .second_holder {
+    display: inline-block;
+    width: 140px;
+    padding-top: 3px;
+    font-size: 18px;
+    color: #FFF;
+    height: 140px;
+    margin: 20px 10px;
+    text-align: center;
+    border-radius: 15%;
+}
+.counter .day, .counter .hour, .counter .minute, .counter .second {
+    font-size: 60px;
+    color:#FFFFFF;
+}
+/*>>>>>>>>>>>> /9. Counter <<<<<<<<<<<<<<<<< */
+
+/*>>>>>>>>>>>> 10. Social Icon <<<<<<<<<<<<<<<<< */
+.social_icon
+{
+    margin-top:20px;
+    margin-bottom:30px;
+    padding-left:0px;
+}
+.social_icon li a
+{
+    color:#FFFFFF;
+    margin-right:14px;
+    font-size:16px;
+    display: inline-block;
+    overflow: hidden;
+}
+.social_icon li a i 
+{
+    transition: transform 0.25s ease, opacity 0.2s linear;
+    -webkit-transition: -webkit-transform 0.25s ease , opacity 0.2s linear;
+    position:relative;
+    line-height:24px;
+}
+.social_icon li a:hover i 
+{
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.social_icon li a i:after 
+{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);	
+    color:#FF0000;
+    font-size:16px;
+    line-height:24px;
+}
+.social_icon li .fa-facebook:after {
+    content:"\f09a";
+}
+.social_icon li .fa-google-plus:after {
+    content:"\f0d5";
+}
+.social_icon li .fa-twitter:after {
+    content:"\f099";
+}
+.social_icon li .fa-pinterest:after {
+    content:"\f0d2";
+}
+.social_icon li .fa-instagram:after {
+    content:"\f16d";
+}
+.social_icon li .fa-linkedin:after {
+    content:"\f0e1";
+}
+.social_icon li .fa-dribbble:after {
+    content:"\f17d";
+}
+.social_icon li a i:before {
+    width: 100%;
+}
+.social_icon2
+{
+    margin-top:20px !important;
+}
+.social_icon li a img
+{
+    display:inline-block;
+}
+
+/*>>>>>>>>>>>> /10. Social Icon <<<<<<<<<<<<<<<<< */
+
+/*>>>>>>>>>>>> 11. Subscribe <<<<<<<<<<<<<<<<< */
+.subscribe-body p
+{
+    color:#FFFFFF;
+    text-transform:uppercase;
+    font-size:16px;
+    margin-top: 80px;
+}
+.subscribe-body form
+{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.subscribe-body .btn-default
+{
+    color:#fff;
+    position:relative;
+}
+.subscribe-body .input-group-btn
+{
+    z-index:99;
+}
+.subscribe-body .input-group-btn:before
+{
+    content: "";
+    position: absolute;
+    border-width: 8px 8px 8px 0px;
+    border-style: solid solid solid none;
+    margin-top: 13px;
+    margin-left: -9px;
+}
+.top_margin
+{
+    margin-top:20px;
+}
+.subscribe-body .sub_text
+{
+    background: rgba(169, 169, 169, 0.3) !important;
+    color:#fff;
+    border: 1px solid #6E6E6E;
+}
+.error_message{
+    margin: 0 !important;
+    margin-top: 5px !important;
+    font-size: 11px !important;
+    color: #f44234 !important;
+    height: 15px !important;
+}
+/*>>>>>>>>>>>> /11. Subscribe <<<<<<<<<<<<<<<<< */
+
+/*>>>>>>>>>>>> 12. Contact Info <<<<<<<<<<<<<<<<< */
+
+.contact_info p
+{
+    font-size:14px;
+    margin-bottom:0px;
+    cursor:pointer;
+    color:#fff;
+    margin-right:10px;
+    float:left;
+}
+.contact_info p i
+{
+    margin-right:10px;
+}
+
+/*>>>>>>>>>>>> /12. Contact Info <<<<<<<<<<<<<<<<< */
+
+/*>>>>>>>>>>>> 13. Copy Right <<<<<<<<<<<<<<<<< */
+.footer{
+    margin-top: 80px;
+}
+.footer .copy_right p
+{
+    text-align:right;
+}
+.copy_right
+{
+    color:#fff;
+}
+.copy_right a
+{
+    color:#fff;
+}
+
+/*>>>>>>>>>>>> /13. Copy Right <<<<<<<<<<<<<<<<< */
+
+/*>>>>>>>>>>>> 14. Progress Bar <<<<<<<<<<<<<<<<< */
+.title_progress
+{
+    color:#fff;
+    margin-bottom:30px;
+}
+.progressbar_outer{
+    border-radius: 50px;
+    padding: 25px;
+    margin: 10px 0;
+    box-shadow: 0 0  10px rgba(209, 219, 231,0.7);
+}
+.progress{
+    height: 27px;
+    margin: 0;
+    overflow: visible;
+    border-radius: 50px;
+    background: rgba(169, 169, 169, 0.3) !important;
+}
+.progress .progress-bar{
+    border-radius: 50px;
+    box-shadow:-1px 10px 10px rgba(91, 192, 222, 0.7);
+}
+.progress .progressbar_value{
+    position: relative;
+    left: -45px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+}
+.progress-bar.active{
+    animation: reverse progress-bar-stripes 0.40s linear infinite, animate-positive 2s;
+}
+@-webkit-keyframes animate-positive{
+    0% { width: 0%; }
+}
+@keyframes animate-positive {
+    0% { width: 0%; }
+}
+/*>>>>>>>>>>>> /14. Progress Bar <<<<<<<<<<<<<<<<< */
+/***** Media Queries css *****/
+@media only screen and (min-width: 1024px) {
+    .more_info {
+        top: 60px;
+    }
+}
+@media only screen and (min-width: 980px) {
+    .more_info {
+        top:55px;
+    }
+}
+@media only screen and (min-width: 800px) {
+    .more_info {
+        top:50px;
+    }
+    .copy_right {
+        padding-right: 0 !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 820px){
+    .service_detail{
+        height: 230px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .more_info {
+        top:50px;
+    }
+    .contact_info{
+        float: left;
+    }
+    .copy_right {
+        float: right;
+        padding-right: 10px;
+    }
+    .number {
+        font-size: 90px;
+        letter-spacing: -5px;
+    }
+    .h2, h2 {
+        font-size: 25px;
+    }
+
+}
+@media(max-width: 768px) {
+
+    .number {
+        font-size: 70px;
+        letter-spacing: -5px;
+    }
+
+}
+@media only screen and (min-width: 700px) {
+    .more_info_container {
+        width: 70%;
+    }
+    .more_info_container header {
+        height: 116px;
+        padding-top: 3em;
+    }
+    .close_more_info {
+        right: 0;
+    }
+}
+@media (min-width: 700px) and (max-width: 767px){
+    .contact_info{
+        padding-left: 130px !important;
+    }
+    .copy_right {
+        position: relative;
+        top: 30px;
+    }
+    .footer .copy_right p{
+        text-align: center;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 510px){
+    .contact_info{
+        padding-left: 170px !important;
+    }
+    .copy_right {
+        position: relative;
+        top: 30px;
+    }
+    .footer .copy_right p{
+        text-align: center;
+    }
+    .coming_text h1 {
+        font-size: 100px !important;
+    }
+}
+@media (min-width: 641px) and (max-width: 700px){
+    .contact_info{
+        padding-left: 60px !important;
+    }
+    .footer .copy_right p {
+        text-align: center;
+        position: relative;
+        top: 30px;
+    }
+}
+@media (min-width: 581px) and (max-width: 640px){
+    .contact_info{
+        padding-left: 30px !important;
+    }
+    .footer .copy_right p {
+        text-align: center;
+        position: relative;
+        top: 30px;
+    }
+}
+@media (min-width: 530px) and (max-width: 580px){
+    .footer .copy_right p {
+        text-align: center;
+        position: relative;
+        top: 30px;
+    }
+}
+@media (min-width: 510px) and (max-width: 529px){
+    .contact_info{
+        padding-left: 190px !important;
+    }
+    .copy_right {
+        position: relative;
+        top: 30px;
+    }
+    .footer .copy_right p{
+        text-align: center;
+    }
+    .coming_text h1 {
+        font-size: 110px !important;
+    }
+}
+@media (min-width: 320px) and (max-width: 359px){
+    .contact_info{
+        padding-left: 60px !important;
+    }
+    .coming_text h1 {
+        font-size: 60px !important;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 375px){
+    .contact_info{
+        padding-left: 80px !important;
+    }
+}
+@media (min-width: 375px) and (max-width: 412px){
+    .contact_info{
+        padding-left: 90px !important;
+    }
+}
+@media (min-width: 412px) and (max-width: 480px){
+    .contact_info{
+        padding-left: 110px !important;
+    }
+}
+@media (min-width: 448px) and (max-width: 480px){
+    .contact_info{
+        padding-left: 145px !important;
+    }
+}
+@media (max-width: 510px) {
+    #main_bg
+    {
+        /* height:100%; */
+    }
+    .overlay_bg
+    {
+        /* height: 100%; */
+    }
+    .overlay
+    {
+        padding:15px;
+    }
+    .button
+    {
+        margin-right:0px;
+    }
+    .social_icon li a img
+    {
+        margin-bottom:15px;
+    }
+    .services_cube_effect
+    {
+        margin-bottom:30px;
+    }
+    .more_info_container
+    {
+        width:100%;
+    }
+    .more_info_container h3
+    {
+        margin-top:35px;
+    }
+
+    .coming_text p{
+        width: 100%;
+    }
+    .coming_text h1{
+        font-size: 80px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    html,body{
+        height: 100%;
+    }
+
+    .footer .copy_right p{
+        text-align: center;
+    }
+
+    .copy_right{
+        position: relative;
+        top: 30px;
+    }
+    .number{
+        font-size: 60px;
+        font-weight: 900;
+        letter-spacing: -3px;
+    }
+    .name {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .service_detail{
+        height: 660px;
+    }
+}
+
+.form-control{
+    background-color: #fff;
+}
+
+@media (min-width: 540px) and (max-width: 699px){
+    .counter .day_holder, .counter .hour_holder, .counter .minute_holder, .counter .second_holder {
+        display: inline-block;
+        width: 100px;
+        padding-top: 3px;
+        font-size: 15px;
+        color: #FFF;
+        height: 85px;
+        margin: 10px 5px;
+        text-align: center;
+        border-radius: 15%;
+    }
+    .counter .day, .counter .hour, .counter .minute, .counter .second {
+        font-size: 30px;
+        color:#FFFFFF;
+    }
+}
